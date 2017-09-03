@@ -57,6 +57,9 @@ ${color1}System${hr 2}
  
  RAM $alignc $mem / $memmax $alignr $memperc%
   $membar
+ 
+ RAM $alignc $swap / $swapmax $alignr $swapperc%
+  $swapbar
 
 ${color1}Processes${hr 2}
  ${color2}$processes processes ($running_processes running)    
