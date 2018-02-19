@@ -35,8 +35,8 @@ conky.config = {
   , gap_y = 0
   
   , minimum_height = 570
-  , minimum_width  = 310
-  , maximum_width  = 310
+  , minimum_width  = 294
+  , maximum_width  = 294
   
   
   -- Graphics:
@@ -53,21 +53,21 @@ conky.config = {
 conky.text = [[
 ${color1}Resources ${hr 2}
  ${color2}${font :BOLD:size=8}CPU${font} $alignc      ${exec sensors | grep fan2 | cut -c 24-27} RPM $alignr ${exec sensors | grep 'Package id 0' | cut -c 17-18}°C
-  Core 1 ${alignr}${cpubar cpu1 7,240}
-  Core 2 ${alignr}${cpubar cpu2 7,240}
-  Core 3 ${alignr}${cpubar cpu3 7,240}
-  Core 4 ${alignr}${cpubar cpu4 7,240}
+  Core 1 ${alignr}${cpubar cpu1 7,220}
+  Core 2 ${alignr}${cpubar cpu2 7,220}
+  Core 3 ${alignr}${cpubar cpu3 7,220}
+  Core 4 ${alignr}${cpubar cpu4 7,220}
  ${voffset 10}${font :BOLD:size=8}GPU${font} $alignc      FAN ${exec nvidia-smi -q -a | grep 'Fan Speed' | cut -c 39- | tr -d ' '} $alignr ${exec nvidia-smi -q -a | grep 'GPU Current Temp' | cut -c 39-40}°C
   GPU ${execbar nvidia-smi -q -a | grep -A 2 'Utilization' | grep 'Gpu' | cut -c 39-}
   MEM ${execbar nvidia-smi -q -a | grep -A 2 'Utilization' | grep 'Memory' | cut -c 39-}
  ${voffset 10}${font :BOLD:size=8}MEM${font}
-  MEM $alignr $mem / $memmax ${membar 7,130}
-  SWAP $alignr $swap / $swapmax ${swapbar 7,130}
- ${voffset 10}${font :BOLD:size=8}DISK${font}
+  MEM $alignr $mem / $memmax ${membar 7,110}
+  SWAP $alignr $swap / $swapmax ${swapbar 7,110}
+ ${voffset 10}${font :BOLD:size=8}DSK${font}
   Read  ${diskio_read sdb}
   Write ${diskio_write sdb}
-  ${voffset 3}root $alignr ${fs_used /} / ${fs_size /} ${fs_bar 7,130 /}
-  gahag $alignr ${fs_used /gahag} / ${fs_size /gahag} ${fs_bar 7,130 /gahag}
+  ${voffset 3}root $alignr ${fs_used /} / ${fs_size /} ${fs_bar 7,110 /}
+  gahag $alignr ${fs_used /gahag} / ${fs_size /gahag} ${fs_bar 7,110 /gahag}
  ${voffset 10}${font :BOLD:size=8}NET${font} $alignr ${addrs enp3s0}
   Up   ${upspeedf enp3s0}k/s (${totalup enp3s0})
   Down ${downspeedf enp3s0}k/s (${totaldown enp3s0})
