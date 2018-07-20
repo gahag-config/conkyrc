@@ -10,7 +10,7 @@ conky.config = {
   
   -- Text:
   , use_xft = true
-  , font = 'Source Code Pro:style=Regular:size=9'
+  , font = 'Source Code Pro:style=Regular:size=10'
   , override_utf8_locale = true
   
   
@@ -35,8 +35,8 @@ conky.config = {
   , gap_y = 40
   
   , minimum_height = 570
-  , minimum_width  = 294
-  , maximum_width  = 294
+  , minimum_width  = 394
+  , maximum_width  = 394
   
   
   -- Graphics:
@@ -57,20 +57,16 @@ ${color1}Resources ${hr 2}
   Core 2 ${alignr}${cpubar cpu2 7,230}
   Core 3 ${alignr}${cpubar cpu3 7,230}
   Core 4 ${alignr}${cpubar cpu4 7,230}
- ${voffset 10}${font :BOLD:size=8}GPU${font} $alignc      FAN ${exec nvidia-smi -q -a | grep 'Fan Speed' | cut -c 39- | tr -d ' '} $alignr ${exec nvidia-smi -q -a | grep 'GPU Current Temp' | cut -c 39-40}°C
-  GPU ${execbar nvidia-smi -q -a | grep -A 2 'Utilization' | grep 'Gpu' | cut -c 39-}
-  MEM ${execbar nvidia-smi -q -a | grep -A 2 'Utilization' | grep 'Memory' | cut -c 39-}
  ${voffset 10}${font :BOLD:size=8}MEM${font}
   MEM $alignr $mem / $memmax ${membar 7,110}
   SWAP $alignr $swap / $swapmax ${swapbar 7,110}
  ${voffset 10}${font :BOLD:size=8}DSK${font}
-  Read  ${diskio_read sdb}
-  Write ${diskio_write sdb}
+  Read  ${diskio_read sda}
+  Write ${diskio_write sda}
   ${voffset 3}root $alignr ${fs_used /} / ${fs_size /} ${fs_bar 7,110 /}
-  gahag $alignr ${fs_used /gahag} / ${fs_size /gahag} ${fs_bar 7,110 /gahag}
  ${voffset 10}${font :BOLD:size=8}NET${font} $alignr ${addrs enp3s0}
-  Up   ${upspeedf enp3s0}k/s (${totalup enp3s0})
-  Down ${downspeedf enp3s0}k/s (${totaldown enp3s0})
+  Up   ${upspeedf wlp2s0}k/s (${totalup wlp2s0})
+  Down ${downspeedf wlp2s0}k/s (${totaldown wlp2s0})
 ${voffset 2}${color1}Processes ${hr 2}
  ${color2}${font :BOLD:size=8}NAME $alignr PID     CPU   MEM${font}
  ${voffset 3}${top name 1}$alignr ${top pid 1}${top cpu 1}${top mem 1}
