@@ -16,7 +16,7 @@ conky.config = {
   
   -- Color:
   , color1 = '0090FC'
-  , color2 = 'FCFCFC'
+  , color2 = '0F0F0F'
   
   
   -- Window:
