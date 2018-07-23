@@ -52,7 +52,7 @@ conky.config = {
 
 conky.text = [[
 ${color1}Resources ${hr 2}
- ${color2}${font :BOLD:size=8}CPU${font} $alignc      ${exec sensors | grep fan2 | cut -c 24-27} RPM $alignr ${exec sensors | grep 'Package id 0' | cut -c 17-18}°C
+ ${color2}${font :BOLD:size=8}CPU${font} $alignr ${exec sensors | grep 'Package id 0' | cut -c 17-18}°C
   Core 1 ${alignr}${cpubar cpu1 7,230}
   Core 2 ${alignr}${cpubar cpu2 7,230}
   Core 3 ${alignr}${cpubar cpu3 7,230}
