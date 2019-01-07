@@ -2,4 +2,6 @@
 
 cd $(dirname $(readlink -f $0)) # jump to the script directory
 
-ln -s "$(pwd)/conkyrc" ~/.conkyrc
+
+mkdir -p "$XDG_CONFIG_HOME/conky"
+ln -s "$(pwd)/conkyrc" "$XDG_CONFIG_HOME/conky/conky.conf"
